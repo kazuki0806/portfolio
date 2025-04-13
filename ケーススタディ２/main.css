@@ -1,0 +1,1613 @@
+/* General Reset */
+* {
+  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ハンバーガーメニューアイコン */
+#menu-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* メニューのスタイル（デフォルト非表示） */
+#hamburger-menu {
+  position: fixed;
+  top: 0;
+  left: -100%; /* 初期状態では左に隠す */
+  width: 250px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding-top: 60px;
+  transition: left 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+/* メニューリスト */
+#hamburger-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#hamburger-menu li {
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#hamburger-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+}
+
+/* メニュー表示時のスタイル */
+#hamburger-menu.active {
+  left: 0; /* メニューを表示 */
+}
+
+/* 閉じるボタン */
+#close-menu {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+#close-menu:hover {
+  color: #ff7f50;
+}
+/* Header Styling */
+header {
+  position: sticky; /* スクロール時に固定 */
+  top: 0;
+  z-index: 1000;
+  background-color: #FFA07A;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Inner Container */
+#header-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  
+  justify-content: space-between;
+}
+
+/* Hamburger Menu Image */
+#header-inner img {
+  position: relative;
+  left: 30px;
+  width: 40px;  /* Adjust size */
+  height: auto;
+  cursor: pointer;
+}
+
+/* Heading */
+#header-inner h1 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+#top-inner {
+  width: 100%;
+  margin: auto;
+}
+
+.swiper {
+  position: relative;
+  width:  100%;
+  height: auto;
+  text-align: center;
+}
+
+.swiper-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  transition: transform 0.5s ease; /* アニメーションの滑らかさ */
+}
+
+/* 画像のスタイル調整 */
+.swiper-slide img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 650px;
+  object-fit: cover;
+ 
+
+}
+
+.animal {
+  position: absolute;
+  bottom: 10%; /* 画像の下部に配置 */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 192, 203, 0.9); /* 半透明の背景 */
+  padding: 18px 23px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 80%;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#cat-content {
+  position: absolute;
+  writing-mode: vertical-rl; /* 縦書き（右から左） */
+  text-orientation: upright; /* 文字を正しい向きに */
+  top: 20%;
+  left: 70%;
+  max-height: 420px;
+}
+
+#dog-content {
+  position: absolute;
+  writing-mode: vertical-rl; /* 縦書き（右から左） */
+  text-orientation: upright; /* 文字を正しい向きに */
+  top: 10%;
+  left: 30%;
+
+}
+
+
+
+
+/* スタジオのセクション全体 */
+#stadio-inner {
+  max-width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+/* タイトルのスタイル */
+.title h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* スタジオのコンテナ */
+.stadios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; /* スタジオ間の間隔 */
+  width: 100%;
+}
+
+/* 各スタジオのスタイル */
+.stadio {
+  display: flex; 
+  align-items: center;
+  
+  padding: 20px;
+ 
+  max-width: 100%;
+  width: 90%;
+  
+}
+
+/* 画像のスタイル */
+.stadio img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: 300px;
+}
+
+/* スタジオの内容 */
+.stadio-content {
+  margin: 15px;
+  text-align: left;
+  padding: 15px;
+}
+
+/* 小見出し */
+.stadio-content h3 {
+  font-size: 22px;
+  color: #444;
+  margin: 10px;
+}
+
+/* 説明文 */
+.stadio-content p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* スタジオプランボタン */
+.btn {
+  margin-top: 20px;
+  padding: 16px 28px;
+  font-size: 24px;
+  color: #fff;
+  background-color: #ff7f50;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:  0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ff6347;
+}
+
+.btn::after {
+  content: " →";
+}
+
+/* タイトルのスタイル（線を追加） */
+.title h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.title h2::after {
+  content: "";
+  display: block;
+  width:  120%;
+  height: 3px;
+  background-color: #ff7f50; /* 線の色 */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  left: -100%;
+  
+}
+
+/* 各スタジオのタイトル（線を追加） */
+.stadio-content h3 {
+  font-size: 22px;
+  color: #444;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  
+}
+
+.stadio-content h3::after {
+  content: "";
+  display: block;
+  width: 120%;
+  height: 2px;
+  background-color: #ff7f50; /* 線の色 */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  
+}
+
+/* 出張サービスセクション全体 */
+#servise-inner {
+  max-width: 100%;
+  margin: 100px auto;
+  text-align: center;
+  z-index: 100;
+}
+
+
+
+/* 画像とテキストを横並びに */
+.servises {
+  display: flex;
+  align-items: center; /* 垂直方向の中央揃え */
+  gap: 30px; /* 画像とテキストの間隔 */
+  justify-content: center;
+  flex-wrap: wrap; /* 画面が狭い場合は縦並び */
+  margin: 50px auto;
+}
+
+/* 画像のスタイル */
+.servises img {
+  width: 45%; /* 画像の幅を調整 */
+  max-width: 400px; /* 最大幅を設定 */
+  border-radius: 15px; /* 角を丸く */
+  object-fit: cover;
+}
+
+/* テキストのスタイル */
+.servise-content {
+  width: 45%; /* テキストの幅を調整 */
+  max-width: 500px; /* 最大幅を設定 */
+  text-align: left; /* 左揃え */
+}
+
+.servise-content p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+
+
+/* カメラマン紹介セクション */
+#cameraman-inner {
+  max-width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+
+
+/* カメラマン全体のレイアウト */
+.cameramans {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* カメラマン同士の間隔 */
+  flex-wrap: wrap; /* 画面が狭い場合は縦並び */
+}
+
+/* 各カメラマンのカード */
+.cameraman {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 450px; /* カードの幅 */
+  width: 45%;
+  text-align: center;
+}
+
+/* カメラマンの画像 */
+.cameraman img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: 300px;
+}
+
+/* カメラマンの内容 */
+.cameraman-content {
+  margin-top: 15px;
+  text-align: center;
+  padding: 15px;
+}
+
+/* カメラマン名 */
+.cameraman-content h3 {
+  font-size: 22px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* 説明文 */
+.cameraman-content p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* カメラマン名（h3）のスタイル */
+.cameraman-content h3 {
+  font-size: 22px;
+  color: #444;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* h3の下に線を追加 */
+.cameraman-content h3::after {
+  content: "";
+  display: block;
+  width: 120%; /* 線の長さ */
+  height: 2px;
+  background-color: #ff7f50; /* 線の色 */
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%); /* 中央揃え */
+}
+
+/* フッター全体のスタイル */
+footer {
+  background-color: #FFA07A; /* ダークグレーの背景 */
+  color: white; /* 白文字 */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* フッターの中身を中央に配置 */
+#footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Tail Familyのロゴやタイトル */
+#footer-inner  {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* フッターのコンテンツ（住所・特徴・連絡先） */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  gap: 40px;
+  flex-wrap: wrap; /* 画面が狭い時は縦並び */
+  margin-top: 30px;
+}
+
+/* 各セクションのスタイル */
+.footer-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 450px;
+}
+
+/* スタジオメニュー全体を中央に配置 */
+#stadio-menu {
+  padding: 40px;
+  max-width: 800px; /* 最大幅を設定 */
+  margin: 40px auto; /* 自動で中央配置 */
+  text-align: center; /* 全体の中央寄せ */
+}
+
+/* h2 のデザイン（下線追加） */
+.menu-title h2 {
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+  margin: 15px auto;
+}
+
+/* h2 の下に線を追加 */
+.menu-title h2::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 3px;
+  background-color: #ff7f50;
+  margin: 10px auto 0; /* 下線を中央配置 */
+}
+
+/* コンテンツ全体のスタイル */
+.stadio-menu-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: left; /* 本文を左寄せ */
+  margin-top: 40px;
+}
+
+/* h3 のデザイン（下線追加） */
+.stadio-menu-content h3 {
+  font-size: 22px;
+  color: #444;
+  margin-bottom: 10px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+/* h3 の下に線を追加 */
+.stadio-menu-content h3::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: #ff7f50;
+  margin: 8px auto 0; /* 下線を中央配置 */
+}
+
+/* サブタイトルのデザイン */
+.sub-title {
+  font-size: 16px;
+  color: #777;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* 料金や詳細の情報を左寄せ */
+.plan-content {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 40px 10px 40px;
+  text-align: left; /* 左寄せ */
+}
+
+/* 予約ボタンを中央に */
+.btn-menu {
+  display: block;
+  background-color: #ff7f50;
+  color: white;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin: 30px auto 15px auto; /* ボタンを中央配置 */
+  text-align: center;
+  width: 50%; /* ボタンの幅を適度に調整 */
+}
+
+.btn-menu:hover {
+  background-color: #ff6347;
+}
+
+/* ギャラリーメニュー全体のデザイン */
+#gallery-menu {
+  padding: 40px;
+  max-width: 90%; /* 最大幅を設定 */
+  margin: 40px auto; /* 自動で中央配置 */
+  text-align: center; /* 全体の中央寄せ */
+}
+
+
+
+/* h2 の下に線を追加 */
+#gallery-menu .menu-title h2::after {
+  content: "";
+  display: block;
+  width: 300%;
+  height: 3px;
+  background-color: #ff6600;
+  margin: 10px auto 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* 中央に配置 */
+}
+
+/* ギャラリーの画像を3×3のグリッドにする */
+#gallery-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ギャラリー画像の配置 */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3列 */
+  gap: 15px; /* 画像の間隔 */
+  margin-top: 20px;
+}
+
+/* ギャラリー画像のスタイル */
+.gallery-picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 画像にホバーエフェクト */
+.gallery-picture img:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+/* タイトルのデザイン */
+.menu-title h2 {
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* タイトルの下に線を追加 */
+.menu-title h2::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 3px;
+  background-color: #ff6600;
+  margin: 10px auto 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* 中央に配置 */
+}
+
+
+
+/* ==========================
+   メインレイアウト
+=========================== */
+.container {
+  display: grid;
+  grid-template-columns: 7fr 3fr; /* 記事エリア（左）7:3 サイドバー（右） */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: white;
+  border-radius: 10px;
+  align-items: start;
+}
+
+/* 記事一覧エリア（左寄せ・横1列レイアウト） */
+.blog-layout {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1列で左寄せ */
+  gap: 20px;
+  justify-content: start;
+}
+
+/* 各ブログ記事（画像が左、コンテンツが右のレイアウト） */
+.blog-post {
+  display: flex;
+  flex-direction: row; /* 横並び */
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  align-items: center; /* 縦の中央揃え */
+  gap: 20px; /* 画像とコンテンツの間隔 */
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+}
+
+/* サムネイル画像 */
+.post-thumbnail {
+  flex: 1; /* 左側に配置 */
+  max-width: 250px; /* 画像の最大幅 */
+}
+
+.post-thumbnail img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* 投稿の内容 */
+.post-content {
+  flex: 2; /* 右側に配置（画像の2倍の幅） */
+  padding: 10px;
+}
+
+
+
+/* 記事の説明文（抜粋） */
+.post-content p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* 「続きを読む」ボタン */
+.post-content a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 20px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+}
+
+.post-content a:hover {
+  background-color: #e65c00;
+}
+
+/* 記事タイトル */
+.post-content h3 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+
+  a {
+    background-color: #fff;
+    color: #333;
+  }
+
+  a:hover {
+    background-color: #fff;
+  }
+}
+
+
+  
+.title h2::after {
+  width: 300%;
+}
+
+.btn a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn a:hover {
+  color: #fff;
+}
+
+.btn-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+#reservation-menu {
+    padding: 40px;
+    max-width: 600px; /* 最大幅を設定 */
+    margin: 40px auto; /* 自動で中央配置 */
+    text-align: center; /* 全体の中央寄せ */
+}
+
+/* フォーム全体 */
+#reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+  width: 100%;
+  margin: 10px auto;
+}
+
+/* ラベルのスタイル */
+#reservation-form label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 入力欄のデザイン */
+#reservation-form input,
+#reservation-form select,
+#reservation-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* テキストエリア（メッセージ入力） */
+#reservation-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+
+/* ギャラリー全体のレイアウト */
+#gallery-menu {
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* ギャラリー:サイドバー = 3:1 */
+  gap: 20px;
+  align-items: start;
+}
+
+/* ギャラリーのタイトル */
+.menu-title {
+  grid-column: span 2; /* タイトルをギャラリーとサイドバーの両方にまたがる */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.menu-title h2 {
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+}
+
+
+
+
+/* ブログ記事のデザイン */
+.blog-post-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+.blog-post-detail img {
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  margin: 15px;
+  margin-top: 30px;
+}
+
+
+
+.post-content-detail h3 {
+  margin: 25px;
+  font-size: 20px;
+  color: #333;
+}
+
+.post-content-detail p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 35px;
+}
+
+
+
+/* メインコンテンツとサイドバーを横並びにする */
+.container-detail {
+  display: flex;
+  max-width: 90%;
+  margin: 30px auto;
+  padding: 0px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* メインブログエリア（6割） */
+.blog-post-detail {
+  flex: 7;  /* 全体の6割を占める */
+  margin-right: 20px;
+}
+
+
+
+
+/* ==========================
+   ギャラリーメニュー全体のレイアウト（完全中央揃え）
+=========================== */
+#gallery-menu {
+  max-width: 1400px; /* 幅を広げる */
+  margin: 50px auto; /* 上下50pxの余白をつけつつ、中央配置 */
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 水平方向の中央揃え */
+  justify-content: center; /* 垂直方向の中央揃え */
+}
+
+/* ギャラリーとサイドバーを中央に配置（7:3レイアウト） */
+.gallery-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center; /* 完全中央配置 */
+  width: 100%;
+  max-width: 1200px; /* 中央の最大幅を指定 */
+}
+
+/* ==========================
+   ギャラリーエリア（拡大 + 中央）
+=========================== */
+.gallery {
+  flex: 7; /* 9割の幅 */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3列 */
+
+  justify-content: center; /* グリッドの要素も中央に配置 */
+}
+
+/* ギャラリーアイテム */
+.gallery-container {
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-container:hover {
+  transform: translateY(-5px);
+}
+
+/* ギャラリー画像 */
+.gallery-picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+/* ==========================
+   サイドバー（中央配置 + 適度に縮小）
+=========================== */
+.sidebar {
+  flex: 3; /* 7:3 の3部分 */
+  max-width: 300px; /* 最大幅を指定（可変） */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* サイドバー内の要素も中央揃え */
+}
+/* ==========================
+   サイドバーのリスト
+=========================== */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 12px;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+}
+
+.sidebar ul li a:hover {
+  background-color: #e65c00;
+  color: white;
+}
+
+
+.sidebar h3 {
+  position: relative; /* 相対位置を指定 */
+  text-align: center; /* テキストを中央寄せ */
+  margin: 10px;
+}
+
+.sidebar h3::after {
+  content: "";
+  display: block;
+  width: 300%; /* 3倍の長さの線 */
+  height: 2px;
+  background-color: #ff7f50; /* コーラルオレンジの線 */
+  margin-top: 5px; /* 上に余白 */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* 中央に配置 */
+  
+}
+
+#single-post {
+  max-width: 1200px;
+  margin: 50px auto;
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 個別記事のレイアウト（7:3 に調整） */
+.single-post-layout {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px; /* 全体の幅を制限 */
+  align-items: flex-start; /* 上揃え */
+}
+
+/* 記事コンテンツ部分（7の割合） */
+.single-post-content {
+  flex: 7; /* 7:3 の割合 */
+  width: 100%; /* 幅を100%に変更し、親要素内に収める */
+  max-width: calc(100% - 330px); /* サイドバーのスペースを確保 */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* サイドバー（横並びで 3 の割合） */
+.sidebar {
+  flex: 3; /* 7:3 の3部分 */
+  width: 300px; /* 固定幅に変更 */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* コンテナ全体をフレックスボックスで横並びに */
+.single-post-layout {
+  display: flex;
+  gap: 20px; /* 要素間の余白 */
+  align-items: flex-start;
+  width: 90%;
+}
+
+/* 投稿のメインコンテンツ部分 */
+.single-post-content {
+  flex: 7; /* 7割の幅 */
+  max-width: 90%; /* 横幅の調整 */
+  position: relative;
+}
+
+.post-body p {
+  margin: 20px;
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+
+/* サムネイル画像を適切に表示（大きくする） */
+.post-thumbnail {
+  max-width: 100%;
+  width: 100%;
+  text-align: center; /* 画像を中央配置 */
+}
+
+.post-thumbnail img {
+  width: 100%;
+  max-height: 500px; /* 画像の最大高さを指定 */
+  border-radius: 15px;
+  object-fit: cover;
+  aspect-ratio: 16/9; /* 画像のアスペクト比を16:9に */
+  display: block;
+}
+
+
+/* 投稿ナビゲーションのレイアウト修正 */
+.post-navigation {
+  display: flex; /* 横並びにする */
+  justify-content: space-between; /* 左右の端に配置 */
+  align-items: center; /* 縦方向の位置を中央に */
+  width: 100%; /* 幅を100%に */
+  max-width: 800px; /* 最大幅を設定（調整可能） */
+  margin: 30px auto; /* 上下の余白を取りつつ中央配置 */
+  padding: 10px 20px; /* 余白を追加 */
+}
+
+/* 前の記事ボタン */
+.prev-post {
+  text-align: left;
+}
+
+/* 次の記事ボタン */
+.next-post {
+  text-align: right;
+}
+
+
+
+
+
+
+
+
+/* 戻るボタンのスタイル */
+.back-to-blog {
+  margin: 20px;
+  text-align: center;
+}
+
+.back-to-blog a {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #ff7f50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.back-to-blog a:hover {
+  background-color: #005a87;
+}
+
+/* 予約完了セクション */
+.reservation-completed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* 画面の高さいっぱいに配置 */
+  text-align: center;
+  background-color: #f8f9fa; /* 背景を薄いグレー */
+}
+
+/* 予約完了メッセージ */
+.reservation-completed-content h3.complete {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c3e50; /* 濃いめのグレー */
+  margin-bottom: 10px;
+}
+
+.reservation-completed-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* 戻るボタン */
+.complete-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #3498db; /* 青 */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  text-decoration: none;
+}
+
+/* ホバー時のエフェクト */
+.complete-btn:hover {
+  background-color: #2980b9; /* 濃い青 */
+  transform: scale(1.05);
+}
+
+#single-post .menu-title h2::after {
+    width: 300%;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* 表示されたらフェードイン */
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* スライダーが最初から表示されるように修正 */
+.swiper {
+  opacity: 1 !important; /* フェードインの影響を受けないように */
+  visibility: visible !important;
+}
+
+
+
+
+/* スマホ対応（画面が小さい場合は縦並び） */
+@media screen and (max-width: 768px) {
+
+  
+
+  .single-post-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.single-post-content {
+    width: 100%;
+}
+
+.post-navigation {
+    
+    text-align: center;
+}
+
+  .sidebar {
+    max-width: 100%; /* スマホ時は横幅いっぱい */
+    padding: 20px;
+    text-align: left;
+    align-self: auto;
+    justify-self: auto;
+  }
+
+  .sidebar h3 {
+    font-size: 22px; /* スマホ時は少し大きく */
+    text-align: left;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sidebar ul li {
+    width: 100%;
+  }
+
+  .sidebar ul li a {
+    padding: 15px;
+    width: 100%;
+    font-size: 18px;
+  }
+
+   /* ギャラリーとサイドバーを縦並びに */
+   .gallery-layout {
+    flex-direction: column;
+    align-items: center; /* 中央配置 */
+    gap: 20px;
+}
+
+/* ギャラリーエリア（2列表示） */
+.gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2カラムレイアウト */
+    gap: 10px; /* アイテム間の間隔 */
+    width: 100%;
+}
+
+/* ギャラリーコンテナの横幅を調整 */
+.gallery-container {
+    width: 100%; /* グリッドに合わせる */
+}
+
+/* サイドバーの幅を調整 */
+.sidebar {
+    width: 90%;
+    padding: 15px;
+}
+
+/* サイドバーのh3の線を短くする */
+.sidebar h3::after {
+    width: 100%; /* 画面幅いっぱいにしない */
+}
+
+  .container {
+    padding: 15px;
+  }
+
+  
+
+  .post-content h3 {
+    font-size: 20px;
+  }
+
+  .post-content p {
+    font-size: 14px;
+  }
+
+  .animal {
+    bottom: 5%; /* スマホでは少し下に配置 */
+    font-size: 14px; /* スマホではフォントサイズを小さく */
+    max-width: 90%;
+    padding: 10px 15px;
+}
+
+  .gallery {
+    flex-direction: column;
+}
+
+.gallery-container {
+    grid-template-columns: repeat(2, 1fr); /* スマホでは2列グリッド */
+}
+
+  #reservation-menu {
+    max-width: 90%;
+    padding: 30px;
+}
+
+#reservation-form input,
+#reservation-form select,
+#reservation-form textarea {
+    font-size: 14px;
+}
+
+
+
+  .post-content h3 {
+    font-size: 12px; /* 少し小さく */
+}
+
+/* 記事の本文（スマホ用） */
+.post-content p {
+    font-size: 8px; /* スマホでは少し小さめ */
+    line-height: 1.4;
+}
+
+/* 「続きを読む」ボタン（スマホ用） */
+.post-content a {
+    font-size: 10px; /* 小さめのボタン */
+    padding: 6px 10px;
+}
+
+  .container {
+    flex-direction: column;
+}
+
+#blog {
+    margin-right: 0;
+}
+
+.sidebar {
+    margin-top: 20px;
+}
+
+
+  .top-picture {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-picture img {
+    width: 100%; /* 画面幅に合わせる */
+    max-width: 100%;
+  }
+
+  .picture-content {
+    position: absolute; /* 画像の上に重ねる */
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    width: auto;
+    max-width: 35%; /* スマホでは少し広めに */
+    padding: 15px;
+  }
+
+  .picture-content p {
+    font-size: 16px; /* スマホでは小さめに */
+    line-height: 1.5;
+  }
+
+  /* 画像とテキストを横並びに */
+.servises {
+  display: flex;
+  flex-direction: row; /* 横並びにする */
+  align-items: center; /* 縦方向の中央揃え */
+  justify-content: space-between; /* 均等配置 */
+  gap: 20px; /* 画像とテキストの間隔 */
+}
+
+/* 画像とテキストの幅 */
+.servises img, .servise-content {
+  width: 50%; /* 画像とテキストをそれぞれ50%に */
+  text-align: left; /* テキストを左揃え */
+}
+
+/* ヘッダー内のレイアウト */
+#header-inner {
+  display: flex;
+  flex-direction: row; /* 横並びにする */
+  align-items: center; /* 縦方向中央揃え */
+  justify-content: space-between; /* 均等配置 */
+  text-align: left;
+}
+
+/* ヘッダーの画像（ハンバーガーメニュー） */
+#header-inner img {
+  position: absolute; /* 静的配置 */
+  margin-bottom: 0; /* 余白を削除 */
+  left: 10px;
+}
+
+
+  /* 画像を含むコンテナ */
+  .top-picture {
+    flex-direction: column;
+  }
+
+  /* 画像サイズ調整 */
+  .top-picture img {
+    width: 100%;
+  }
+
+  
+
+  /* スタジオのレイアウト */
+  .stadios {
+    flex-direction: column;
+  }
+
+  .stadio {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .stadio img {
+    width: 100%;
+    max-height: 200px;
+  }
+
+  .stadio-content {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* タイトルの線の長さを短く */
+  .title h2::after {
+    width: 100%;
+    left: 0%;
+  }
+
+  .stadio-content h3::after {
+    width: 100%;
+  }
+
+  /* 出張サービスのレイアウト */
+  .servises {
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+   
+  }
+
+  .servises img {
+    width: 100%;
+  }
+
+  .servise-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ボタンを中央揃え */
+  .btn {
+    width: 80%;
+    font-size: 16px;
+    padding: 10px;
+  }
+  .stadio {
+    flex-direction: column !important; /* スマホでは縦並び */
+    text-align: center;
+    width: 100%;
+  }
+
+  .stadio img {
+    order: -1; /* 画像を一番上に */
+    width: 100%;
+    max-height: 200px;
+  }
+
+  .stadio-content {
+    order: 1; /* テキストを画像の下に */
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .cameramans {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cameraman {
+    width: 90%; /* スマホでは横幅を広げる */
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-content p {
+    max-width: 100%;
+  }
+  .only {
+    display: none;
+  }
+}
+
+/* ==========================
+   レスポンシブデザイン（スマホ・タブレット対応）
+=========================== */
+@media (max-width: 1024px) {
+
+ 
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    
+    max-width: 100%; /* 記事と同じ幅にする */
+    padding: 20px; /* 記事とバランスを取る */
+    text-align: left; /* 記事と同じ左揃え */
+    align-self: auto; /* align-self をリセット */
+    justify-self: auto; /* justify-self をリセット */
+  }
+
+  .sidebar h3 {
+    font-size: 24px; /* タイトルを少し大きく */
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center; /* スマホでは中央揃え */
+  }
+
+  .sidebar ul li {
+    width: 100%;
+  }
+
+  .sidebar ul li a {
+    display: block;
+    padding: 15px;
+    width: 90%;
+    font-size: 18px;
+    
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+  }
+
+  .sidebar ul li a:hover {
+    background: #e65c00;
+  }
+  .sidebar h3::after {
+    width: 200%; /* 画面幅いっぱいにしない */
+    position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* 中央に配置 */
+}
+}
+
+

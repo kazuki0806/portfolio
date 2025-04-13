@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<header>
+  <div id="header-inner">
+    <img src="" alt="">
+    <h1>Tail Family</h1>
+  </div>
+</header>
+
+<body>
+  <main>
+    <article>
+      <section>
+        <div id="reservation-menu">
+          <div class="menu-title">
+              <h2>予約ページ</h2>
+          </div>
+      
+          <form id="reservation-form">
+              <label for="name">お名前</label>
+              <input type="text" id="name" name="name" placeholder="例: 山田 太郎" required>
+      
+              <label for="email">メールアドレス</label>
+              <input type="email" id="email" name="email" placeholder="例: example@email.com" required>
+      
+              <label for="phone">電話番号</label>
+              <input type="tel" id="phone" name="phone" placeholder="例: 090-1234-5678" required>
+      
+              <label for="date">希望日</label>
+              <input type="date" id="date" name="date" required>
+      
+              <label for="time">希望時間</label>
+              <select id="time" name="time" required>
+                  <option value="">選択してください</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+              </select>
+      
+              <label for="message">備考（任意）</label>
+              <textarea id="message" name="message" placeholder="ご希望や質問があればご記入ください"></textarea>
+      
+              <button type="submit" class="btn">予約する</button>
+          </form>
+      </div>
+      
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <div id="footer-inner">
+      <p>Tail Family</p>
+      <div class="footer-content">
+        <p>スタジオ名：Studio Tail Family
+          所在地：〒105-0001東京都港区虎ノ門1丁目3-1グローバルスクエア 17階
+          アクセス：
+          東京メトロ銀座線「虎ノ門駅」より徒歩3分
+          東京メトロ日比谷線「虎ノ門ヒルズ駅」より徒歩5分
+          営業時間：10:00〜19:00（最終受付 17:00）定休日：毎週火曜日
+          </p>
+
+          <p>特徴：
+            自然光がたっぷり入る広々としたスタジオ
+            ペットがリラックスできる落ち着いた空間づくり
+            ご家族も一緒にくつろげるラウンジスペース完備
+            お問い合わせ：
+            TEL：03-xxxx-xxxx
+            メール：-----@tailfamily.jp
+            ペットと一緒に心地よい時間を過ごせるスタジオです。ぜひ一度お越しください！
+            </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
