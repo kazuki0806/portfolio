@@ -1,0 +1,769 @@
+/* フォント設定 */
+body {
+  font-family: "游明朝", "ヒラギノ明朝 Pro", "Noto Serif JP", "Times New Roman", serif;
+}
+
+/* トップページの背景画像設定 */
+.top-page {
+  background-image: url('LPimg/スイーツ9.png'); /* 背景画像 */
+  background-size: cover; /* 画面いっぱいに表示 */
+  background-position: center; /* 中央に配置 */
+  background-repeat: no-repeat; /* 繰り返しを防ぐ */
+  background-attachment: fixed; /* 背景を固定 */
+  width: 100vw; /* 横幅100%維持 */
+  height: 100vh; /* 画面の高さ100% */
+  min-height: 100vh; /* スクロールしても100%維持 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden; /* スクロールを防ぐ */
+}
+
+
+
+.tops img {
+  position: absolute;
+  top: 5%;
+  left: 0%;
+}
+
+.top-content {
+  background: rgba(255, 255, 255, 0.85); /* 背景をやや透明に */
+  padding: 10px 50px;
+  border-radius: 10px; /* 角を丸くする */
+  gap: 0px;
+  max-width: 80%; /* 画面幅を超えないように */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 影を追加して浮かせる */
+  text-align: center;
+  width: 100vh;
+}
+
+.top-content h1 {
+  font-size: 60px;
+  color: #d32f2f; /* 赤系のカラー */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* テキストに影を追加 */
+}
+
+.top-content p {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+/* メインページ全体 */
+.main-page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+/* メインビジュアルの設定 */
+.mains {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* メインの背景画像を全て表示 */
+.main-picture {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('LPimg/main.jpg'); /* メインビジュアル */
+  background-size: cover; /* 画面全体に表示 */
+  background-position: center;
+  background-size: contain; /* 画像全体を表示し、必要なら縮小 */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* タイトルセクション */
+.title {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: 100vh;
+}
+
+/* メインの背景画像を全画面表示 */
+.main-picture {
+  width: 100vw;
+  background-image: url('LPimg/main.jpg'); /* メインビジュアル */
+  background-size: cover; /* 画面全体に表示 */
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+/* 幸せなコンテンツ */
+.happy-content {
+  color: #333;
+  padding: 40px;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  position: relative; /* 背景とレイヤー化 */
+  top: -10%;
+}
+
+/* テキストのスタイル */
+.happy-content h1 {
+  font-size: 3.4em;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.happy-content p {
+  font-size: 2.0em;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* サブタイトルセクション */
+.sub-title {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* 中央揃え */
+  align-items: center;
+}
+
+/* 背景画像の追加（`.world-content` のサイズにフィット） */
+.sub-title-picture {
+  width: 100%;
+  height: 50vh; /* 高さを画面全体に設定 */
+  background-image: url('LPimg/\ 2.jpg'); /* 背景画像を設定 */
+  background-size: cover; /* 画像を全体表示 */
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  position: relative;
+  padding: 40px; /* `.world-content` と同じ余白 */
+  margin: 0; /* 上下の余白をなくして画面全体に表示 */
+}
+
+
+/* テキストエリア（背景画像と同じサイズ） */
+.world-content {
+  color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 2; /* オーバーレイより前面に */
+  max-width: 1000px;
+}
+
+
+/* ケーキセクション */
+.cakes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 0px;
+  margin-top: 30px;
+}
+
+/* 各ケーキアイテム（基本レイアウト） */
+.cake {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+ 
+}
+
+/* 1つ目と3つ目のケーキは通常 */
+.cake:first-child, 
+.cake:last-child {
+  flex-direction: row;
+}
+
+/* 2つ目のケーキは画像を左、テキストを右に */
+.cake:nth-child(2) {
+  flex-direction: row; /* 左画像、右テキスト */
+  width: 100%; /* 最大幅 */
+}
+
+/* 画像の共通スタイル */
+.cake img {
+  width: 50%;
+  object-fit: cover;
+}
+
+/* ケーキのテキストエリア */
+.cake-content {
+  width: 50%;
+  padding: 20px;
+  text-align: left;
+  max-width: 450px; /* 最大幅を設定して文字幅を狭く */
+  margin: 0 auto;
+}
+
+.cake-content:nth-child(2) {
+  margin: 0 auto;
+}
+
+/* テキストデザイン（幅を狭くする） */
+.cake-content h1 {
+  font-size: 4em;
+  color: #d32f2f;
+  line-height: 1;
+}
+
+.cake-content h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.cake-content p {
+  font-size: 1.1em;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* 最後のケーキセクション */
+.last-cake {
+  padding: 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* 画像の一部を隠すため */
+}
+
+/* ケーキコンテンツの全体レイアウト */
+.last-cakes {
+  display: flex;
+  flex-direction: column; /* 画像を上、テキストを下に配置 */
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  width: 100%;
+  gap: 10px;
+  position: relative;
+}
+
+/* 左側の画像（上に配置） */
+.last-cakes img:first-child {
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* テキストエリア */
+.last-cake-content {
+  text-align: center;
+  max-width: 630px;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* テキストを縦に並べる */
+  align-items: center;
+}
+
+/* タイトルデザイン */
+.last-cake-content h2 {
+  font-size: 2em;
+  color: #d32f2f;
+  margin-bottom: 15px;
+}
+
+/* テキストデザイン */
+.last-cake-content p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* 右側のいちごの写真（70%だけ画面に表示） */
+.last-cake img:last-child {
+  position: absolute;
+  right: -25px; /* 画像の30%を画面外に出す */
+  max-width: 200px;
+}
+
+/* メニューセクション */
+.menus-page {
+  text-align: center;
+  background-image: url('LPimg/newmenu.jpg'); /* 背景画像 */
+  background-size: 100% auto; /* 横幅を100%、高さは自動調整 */
+  background-position: center top; /* 画像を中央配置 */
+  background-repeat: no-repeat; /* 画像の繰り返しを防ぐ */
+  background-color: #f8f8f8; /* 画像の足りない部分を補完 */
+  width: 100vw;
+  height: 150vh; /* 画面いっぱいに表示 */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* メニューコンテンツ（中央配置） */
+.menu-inner {
+  position: relative;
+  top: 14%;
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+}
+
+/* セクションタイトル */
+.menu-inner h1 {
+  font-size: 2.5em;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+/* メニューアイテムのレイアウト（中央配置） */
+.menus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 各メニューアイテム */
+.menu {
+  padding: 20px;
+  text-align: center;
+  flex: 1 1 calc(33.333% - 20px); /* 3列レイアウト */
+  max-width: 400px;
+  
+}
+
+/* 画像スタイル */
+.menu img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+}
+
+/* メニューの説明 */
+.menu-content {
+  margin-top: 15px;
+}
+
+.menu-content h3 {
+  font-size: 1.5em;
+  color: #d32f2f;
+}
+
+.menu-content p {
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* Aboutページの全体レイアウト */
+.about-page {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 内部コンテンツのレイアウト */
+.about-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  width: 100%;
+  gap: 30px;
+  text-align: center;
+}
+
+/* お店の写真 */
+.about-inner img:first-child {
+  width: 50%; /* 画像を50%に調整 */
+  max-width: 400px; /* 少し縮小 */
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* お店の情報 */
+.about-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ロゴ画像（小さく調整） */
+.about-content img {
+  width: 30%;
+  margin-bottom: 10px;
+}
+
+/* 店舗情報テキスト（小さく調整） */
+.about-content p {
+  font-size: 1em; /* 文字サイズを小さく */
+  color: #333;
+  line-height: 1.5;
+}
+
+
+/* フッター全体 */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* フッター内部のコンテンツを中央配置 */
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  gap: 15px;
+}
+
+/* SNSアイコンの配置 */
+.icon {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* SNSアイコンのサイズ調整 */
+.icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* フッターのテキストを中央に配置 */
+.footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 0.9em;
+  max-width: 300px;
+}
+
+
+
+/* タイトルフォントサイズ */
+.world-content h1 {
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+/* 説明テキストのフォントサイズ */
+.world-content p {
+  font-size: 8px;
+  line-height: 1,4;
+}
+
+@media screen and (max-width: 768px) {
+
+  /* 📌 タイトルセクション */
+  .title {
+    width: 100vw;
+    padding: 0;
+    text-align: center;
+  }
+
+  /* 📌 メインの背景画像をスマホ用に変更 */
+  .main-picture {
+    background-image: url('LPimg/sp-2.jpg'); /* スマホ用背景 */
+    background-size: cover; /* 画面いっぱいに表示 */
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 60vh; /* スマホでは高さを縮小 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0%;
+    overflow: hidden;
+  }
+
+  /* 📌 幸せなコンテンツ */
+  .happy-content {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    top: -20%;
+  }
+
+  /* 📌 タイトルのフォントサイズ調整 */
+  .happy-content h1 {
+    font-size: clamp(22px, 5vw, 28px);
+    line-height: 1.4;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* 読みやすく影を追加 */
+  }
+
+  /* 📌 説明テキストのフォントサイズ */
+  .happy-content p {
+    font-size: clamp(14px, 4vw, 18px);
+    line-height: 1.6;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* 読みやすく影を追加 */
+  }
+
+  .sub-title {
+    width: 100vw;
+    padding: 0;
+    text-align: center;
+    max-height: 200px;
+  }
+
+  /* 📌 背景画像をスマホ用に変更 */
+  .sub-title-picture {
+    background-image: url('LPimg/sp-7.jpg'); /* スマホ用背景 */
+    background-size: cover; /* 画面全体に表示 */
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw; /* 💡 スマホでは `100vw` に変更（画面幅いっぱいに） */
+    height: 20vh; /* 💡 高さを少し増やす */
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: contain;
+  }
+
+  /* 📌 サブタイトルのテキスト */
+  .world-content {
+    width: 90%;
+    max-width: 300px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* 📌 タイトル（h1）のフォントサイズを大きく */
+.world-content h1 {
+  font-size: 18px; /* 💡 画面幅に応じてサイズ調整 */
+  margin-bottom: 10px; /* 💡 余白を適度に確保 */
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* 💡 影を強くして背景とのコントラストを確保 */
+}
+
+/* 📌 説明テキスト（p）のフォントサイズを大きく */
+.world-content p {
+  font-size: 8px; /* 💡 画面幅に応じてサイズ調整 */
+  line-height: 1.6; /* 💡 行間を適切に調整 */
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* 💡 文字が背景に埋もれないように */
+}
+
+  /* 📌 ケーキセクション */
+  .cakes {
+    display: flex;
+    flex-direction: column; /* 💡 全て縦並びに */
+    align-items: center;
+    gap: 20px; /* 💡 各ケーキ間の余白を調整 */
+    padding: 30px 0;
+    margin-top: 20px;
+  }
+
+  /* 📌 各ケーキアイテム（画像を上・テキストを下に） */
+  .cake {
+    display: flex;
+    flex-direction: column; /* 💡 画像を上・テキストを下に配置 */
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    width: 100%; /* 💡 画面いっぱいになりすぎないように */
+    max-width: 400px; /* 💡 最大幅を制限 */
+    margin: 0;
+    padding: 15px 0;
+  }
+
+  /* 📌 画像を上に配置（回転しないよう調整） */
+  .cake img {
+    width: 100%; /* 💡 幅いっぱい */
+    max-width: 100%; /* 💡 最大幅を制限しつつ調整 */
+    height: auto;
+    object-fit: contain; /* 💡 縦横比を維持して画像を収める */
+    order: -1; /* 💡 画像を `.cake-content` の上に配置 */
+    transform: rotate(0deg); /* 💡 画像の回転を防ぐ */
+  }
+
+  /* 📌 ケーキのテキストエリア（画像の下に配置） */
+  .cake-content {
+    width: 100%; /* 💡 スマホでは横幅いっぱい */
+    max-width: 90%;
+    padding: 15px;
+    text-align: center; /* 💡 テキストを中央寄せ */
+  }
+
+  /* 📌 テキストデザイン（スマホ向けサイズ調整） */
+  .cake-content h1 {
+    font-size: clamp(24px, 6vw, 32px); /* 💡 画面幅に応じてサイズ変更 */
+    color: #d32f2f;
+    line-height: 1.2;
+  }
+
+  .cake-content h2 {
+    font-size: clamp(18px, 5vw, 26px);
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .cake-content p {
+    font-size: clamp(14px, 4vw, 20px);
+    color: #333;
+    line-height: 1.5;
+  }
+
+  /* 📌 最後のケーキセクション */
+  .last-cake {
+    display: flex;
+    flex-direction: column; /* 💡 スマホでは縦並び */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    position: relative; /* 💡 画像がずれないように */
+  }
+
+  /* 📌 `last-cakes` の配置 */
+  .last-cakes {
+    display: flex;
+    flex-direction: column; /* 💡 画像を上、テキストを下に */
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  /* 📌 いちごの写真（常に表示） */
+  .last-cake img:last-child {
+   display: none;
+  }
+
+  /* 📌 テキストエリア */
+  .last-cake-content {
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .last-cake-content h2 {
+    font-size: clamp(20px, 5vw, 26px);
+    color: #d32f2f;
+  }
+
+  .last-cake-content p {
+    font-size: clamp(14px, 4vw, 18px);
+    color: #333;
+  }
+
+  .menu-content {
+    display: none;
+  }
+
+  .menu-inner {
+    position: absolute;
+    top: 10%;
+  }
+
+  .menus-page {
+    height: 50vh;
+  }
+  
+  .menu-inner {
+    position: absolute;
+    top: 25%;
+  }
+
+  .sweets {
+    display: flex;
+    justify-content: center; /* 画像を中央配置 */
+    align-items: center;
+    width: 100%;
+  }
+
+  .sweets img {
+    max-width: 100%; /* 画像の最大幅を調整 */
+    height: auto; /* 縦横比を保持 */
+  }
+
+  .about-page {
+    text-align: center; /* テキストを中央揃え */
+    padding: 20px; /* 余白を追加 */
+  }
+
+  .about-inner {
+    display: flex;
+    flex-direction: column; /* 縦並びに変更 */
+    align-items: center;
+    gap: 15px; /* 間隔を追加 */
+  }
+
+  .about-inner img {
+    width: 100%; /* 画像の横幅を100%に */
+    max-width: 300px; /* 最大幅を設定 */
+    height: auto; /* 縦横比を保持 */
+    border-radius: 10px; /* 角を少し丸く */
+  }
+
+  .about-content {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .about-content p {
+    font-size: 1em; /* テキストのサイズ調整 */
+    line-height: 1.6; /* 行間を少し広げて読みやすく */
+    word-break: break-word; /* 途中で改行を許可 */
+  }
+
+  .about-content img {
+    max-width: 200px; /* ロゴ画像のサイズ調整 */
+  }
+
+}
+
+/* 📌 デスクトップ時のフォントサイズ */
+@media screen and (min-width: 769px) {
+  .world-content h1 {
+    font-size: clamp(24px, 6vw, 32px); /* 💡 デスクトップでさらに大きく */
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  .world-content p {
+    font-size: clamp(16px, 5vw, 20px); /* 💡 デスクトップでさらに大きく */
+    line-height: 2;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  }
+}
+
+
