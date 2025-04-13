@@ -1,0 +1,101 @@
+/* 全体の背景色をアニメーションで変更 */
+#secound {
+  transition: background-color 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* スクロールを無効化 */
+  
+}
+
+/* 円のコンテナ（固定） */
+.circle-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* 下半分を隠す */
+  
+}
+
+/* 画像のスタイル */
+.circle-img {
+  position: absolute;
+  width: 220px; /* 画像サイズ */
+  height: 320px;
+  cursor: grab;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ドラッグ中 */
+.circle-img:active {
+  cursor: grabbing;
+}
+
+#secound-title {
+  text-align: center;
+  position: absolute;
+  top: 5%;  /* 画面の中央 */
+  left: 52%; /* 画面の中央 */
+  transform: translate(-50%, -50%); /* 完全に中央に配置 */
+  font-size: 300px;
+  white-space: nowrap; /* 文字が折り返されるのを防ぐ */
+  color: #000;
+}
+
+#secound-btn {
+  text-align: center;
+  position: absolute;
+  top: 70%;  /* 画面の中央 */
+  left: 52%; /* 画面の中央 */
+  transform: translate(-50%, -50%); /* 完全に中央に配置 */
+  white-space: nowrap; /* 文字が折り返されるのを防ぐ */
+  background-color: blue;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 2px solid blue; /* ✅ ボタンの枠線を背景色と同じ青に */
+}
+
+
+/* 📱 **スマホ対応** */
+@media (max-width: 768px) {
+  /* ✅ スマホでは `#secound` を画面の中央に配置 */
+  #secound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* ✅ 円のサイズを小さく */
+  .circle-container {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* ✅ タイトルを画像と完全に同期 */
+  #secound-title {
+    font-size: 80px;
+    position: absolute;
+  }
+
+  /* ✅ ボタン */
+  #secound-btn {
+    top: 85%;
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  /* ✅ 画像サイズを小さく */
+  .circle-img {
+    width: 80px;
+    height: 120px;
+  }
+}
+

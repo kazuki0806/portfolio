@@ -1,0 +1,507 @@
+/* 初期状態で `header` を画面全体に表示 */
+#animated-header {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000; /* 初期背景色 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* 他の要素より上に */
+  transition: all 1.5s ease-in-out; /* スムーズなアニメーション */
+}
+
+#header-container {
+  color: #ffffff;
+  font-size: 50px;
+}
+
+#animated-header.shrink {
+  height: 90px;
+  width: 90px;
+  z-index: 1;
+  border-radius: 30px;
+  position: fixed;
+  top: 3%;
+  left: 3%;
+}
+
+.text-shrink {
+  font-size: 0.65rem; /* 小さくする */
+}
+
+
+/* 全体のコンテナ */
+#first-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 画面いっぱい */
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+  z-index: 1;
+  width: 100vw;
+}
+
+/* グリッドレイアウト設定 */
+#first-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4等分のグリッド */
+  width: 100%; /* 全体の幅を調整 */
+}
+
+/* 各アイテム */
+.first {
+  background: white;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 通常時は中央 */
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 1.5s ease-in-out, width 1.5s ease-in-out, opacity 1s ease-in-out;
+}
+
+/* 画像のスタイル（デフォルトで非表示） */
+.first img {
+  height: auto;
+  width: 150px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+  transform: translateY(20px); /* 画像を少し下に隠す */
+}
+
+/* コンテンツのスタイル */
+.first-content {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  position: absolute;
+  text-align: center;
+}
+
+/* ホバー前：コンテンツを中央に */
+.first:not(:hover) .first-content {
+  transform: translateY(0);
+}
+
+/* ホバー時：flexでcolumnに変更 */
+.first:hover {
+  display: flex;
+  flex-direction: column; /* 縦並び */
+  justify-content: flex-start;
+
+
+  /* 1つ目 */
+&:nth-child(1) {
+  background-color: #D54040;
+}
+
+/* 2つ目 */
+&:nth-child(2) {
+ background-color: #8474FF;
+}
+
+/* /* 3つ目 * */
+&:nth-child(3) {
+ background-color: #73FF81;
+}
+
+/* 4つ目 */
+&:nth-child(4) {
+  background-color: #FFB3B4;
+}
+}
+
+/* ホバー時：画像を表示 */
+.first:hover img {
+  opacity: 1;
+  transform: translateY(70%);
+}
+
+/* ホバー時：コンテンツを画像の下に表示 */
+.first:hover .first-content {
+  opacity: 1;
+  transform: translateY(150%); /* 少し下に配置 */
+  position: relative;
+  color: #ffffff;
+}
+
+/* From Uiverse.io by iZOXVL */ 
+.btn-drink {
+  padding: 8px 16px;
+  border: 2px solid #2c2c2c;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.btn-drink::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+
+.btn-drink:hover::after {
+  transform: scale(4);
+}
+
+.btn-drink:hover {
+  border-color: #666666;
+  background: #292929;
+}
+
+
+/* `.first` を滑らかに拡大する */
+.first.active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background: white;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.5s ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* 拡大前の状態 */
+.first {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* 他の `.first` を非表示にするが、フェードアウト効果 */
+.first.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* 拡大時の画像サイズ調整 */
+.first.active img {
+  width: 200px; /* 拡大 */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 1つ目の `.first.active` の特別なスタイル */
+.first:nth-child(1).active {
+  background-color: #D54040;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+/* 閉じるボタンを右下に固定 */
+.btn-close {
+  position: absolute;  /* `.first.active` の中で絶対配置 */
+  bottom: 15%;  /* 下からの位置 */
+  right: 15%;  /* 右からの位置 */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;  /* クリック可能に */
+  transition: background 0.3s ease, transform 0.3s ease;
+  padding: 10px 20px;
+  border: 2px solid #2c2c2c;
+  background-color: #1a1a1a; 
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 110; /* 他の要素より前面に */
+  overflow: hidden; /* エフェクトがはみ出さないように */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ボタンのホバーエフェクト（修正） */
+.btn-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.25) 0%,  /* 中心が少し白っぽい */
+    rgba(255, 255, 255, 0) 70%  /* 外側が透明 */
+  );
+  transform: translate(-50%, -50%) scale(0);  /* 最初は見えない */
+  transition: transform 0.5s ease;  /* アニメーション */
+  pointer-events: none; /* クリック判定をボタン本体に */
+}
+
+/* ホバー時のエフェクト */
+.btn-close:hover::after {
+  transform: translate(-50%, -50%) scale(3); /* 光が広がるエフェクト */
+}
+
+/* ホバー時の色変更 */
+.btn-close:hover {
+  border-color: #666666;
+  background: #292929;
+  transform: scale(1.1); /* 少し拡大して押しやすく */
+}
+
+/* 疑似要素のクリック判定を無効化し、ボタンのクリックを優先 */
+.btn-close,
+.btn-close::after {
+  pointer-events: auto; /* ボタン本体のクリックを有効化 */
+}
+
+
+.first.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* 画面幅いっぱい */
+  height: 100vh; /* 画面高さいっぱい */
+  max-width: 100%; /* 画面からはみ出さない */
+  max-height: 100%; /* 画面からはみ出さない */
+  z-index: 100;
+  background: white;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.6s ease-in-out;
+  transform: translate(0, 0); /* 画面中央へ配置 */
+  overflow: hidden; /* はみ出しを防ぐ */
+}
+
+
+/* `.first.active` の時は `hover` の効果を無効化 */
+.first.active:hover {
+  pointer-events: none; /* ホバー無効 */
+}
+
+/* `.first.active` の時は `first-content` を非表示 */
+.first.active .first-content {
+  display: none;
+}
+
+/* 通常時の `.first` のアニメーション */
+.first {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* 他の `.first` を非表示にするが、フェードアウト効果 */
+.first.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* 拡大時の画像サイズ調整 */
+.first.active img {
+  width: 250px; /* 拡大 */
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 102;
+}
+
+/* 1つ目の `.first.active` の特別なスタイル */
+.first:nth-child(1).active {
+  background-color: #D54040;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+.first:nth-child(2).active {
+  background-color: #8474FF;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+.first:nth-child(3).active {
+  background-color: #73FF81;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+.first:nth-child(4).active {
+  background-color: #FFB3B4;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+
+
+/* `.first.active` の時に `h1` を中央に表示 */
+.first.active .first-title {
+  display: block;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: bold;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 101;
+  font-size: 400px;
+}
+
+/* 通常時は `h1` を非表示 */
+.first-title {
+  display: none;
+  opacity: 0;
+}
+
+#scroll-top {
+  text-decoration: none; /* リンクの下線を削除 */
+  color: inherit; /* 親要素の文字色を引き継ぐ */
+  transition: opacity 0.3s ease-in-out; /* 滑らかなフェード効果 */
+}
+
+#scroll-top:hover {
+  opacity: 0.7; /* ホバー時に少し薄く */
+}
+
+/* 📱 スマホ対応 */
+@media (max-width: 768px) {
+
+  
+  /* ✅ ヘッダー縮小時のサイズ調整 */
+  #animated-header.shrink {
+    height: 60px;
+    width: 60px;
+    border-radius: 20px;
+    top: 2%;
+    left: 2%;
+  }
+
+  /* ✅ ヘッダー内のテキストを小さく */
+  #header-container {
+    font-size: 30px;
+  }
+  
+  /* ✅ 文字サイズをさらに小さく */
+  .text-shrink {
+    font-size: 0.5rem;
+  }
+
+  /* ✅ `.first` を **2個ずつ表示** できるようにする */
+  #first-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* 上から順に配置 */
+    overflow-y: auto; /* 縦スクロールを許可 */
+    height: 100vh; /* 画面いっぱいに設定 */
+  }
+
+  #first-inner {
+    display: grid;  /* グリッドレイアウト */
+    grid-template-columns: repeat(2, 1fr); /* 2個ずつ表示 */
+    gap: 10px;
+    width: 100%; /* 幅を明示的に指定 */
+  }
+
+  /* ✅ `.first` のサイズ調整 */
+  .first {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* すべての `.first` が均等に配置されるように */
+    min-height: auto; /* 高さを調整 */
+    padding: 15px;
+    width: 90%; /* 幅を調整 */
+  }
+
+  /* ✅ 横スクロールを防ぐ */
+  #first-container {
+    overflow-x: hidden;
+  }
+
+  /* ✅ 画像サイズを小さく */
+  .first img {
+    width: 30%;
+  }
+
+  /* ✅ `.first.active` のときホバー効果を無効化 */
+  .first.active:hover {
+    pointer-events: none;
+  }
+
+  /* ✅ `.first` のホバー時の画像とコンテンツ位置調整 */
+  .first:hover img {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+
+  .first:hover .first-content {
+    opacity: 1;
+    transform: translateY(100%);
+    position: relative;
+    color: #ffffff;
+  }
+
+  /* ✅ ボタンの調整 */
+  .btn-drink {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  /* ✅ 拡大時の `.first` のアニメーション調整 */
+  .first.active {
+    width: 100vw;
+    height: 100vh;
+    transform: translate(0, 0) scale(1);
+  }
+
+  /* ✅ `h1` のサイズ調整 */
+  .first.active .first-title {
+    font-size: 2.5rem;
+    top: 5%;
+  }
+
+  /* ✅ 閉じるボタンのサイズと位置調整 */
+  .btn-close {
+    bottom: 10%;
+    right: 10%;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* `.first.active` の時は `hover` の効果を無効化 */
+.first.active:hover {
+  pointer-events: none; /* ホバー無効 */
+}
+}
